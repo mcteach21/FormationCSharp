@@ -1,0 +1,35 @@
+﻿
+A - Entity Framework - Code First
+
+1- Entity Framework (EF) Core est une version légère, extensible, open source et multiplateforme de 
+la très connue technologie d’accès aux données Entity Framework.
+EF Core peut servir de Mappeur relationnel objet (O/RM), qui :
+Permet aux développeurs .NET de travailler avec une base de données à l’aide d’objets .NET.
+Élimine la nécessité de la plupart du code d’accès aux données qui doit généralement être écrit.
+EF Core prend en charge de nombreux moteurs de base de données ; consultez Fournisseurs de base de données 
+pour plus d’informations (https://docs.microsoft.com/fr-fr/ef/core/providers/?tabs=dotnet-core-cli).
+
+Bien démarrer avec EF Core :
+https://docs.microsoft.com/fr-fr/ef/core/get-started/overview/first-app?tabs=visual-studio
+
+- Installer Entity Framework Core
+Outils > Gestionnaire de package NuGet > Console du Gestionnaire de package
+Exécutez les commandes suivantes :
+PowerShell
+
+Install-Package Microsoft.EntityFrameworkCore
+Install-Package Microsoft.EntityFrameworkCore.SqlServer
+
+- Création Base de Données
+Install-Package Microsoft.EntityFrameworkCore.Tools
+Add-Migration InitialCreate
+Update-Database
+
+B- Entity Framework - DB First
+
+Scaffold-DbContext [-Connection] [-Provider] [-OutputDir] [-Context] [-Schemas>] [-Tables>] 
+                    [-DataAnnotations] [-Force] [-Project] [-StartupProject] [<CommonParameters>]
+
+Exemple :
+Scaffold-DbContext "Server=(localdb)\mssqllocaldb;Database=EFBlog;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+    
